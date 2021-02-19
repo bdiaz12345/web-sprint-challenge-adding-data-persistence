@@ -19,8 +19,8 @@ router.post('/', (req, res) => {
     const taskData = req.body
 
     Tasks.add(taskData)
-        .then(task => {
-            res.status(201).json(task)
+        .then(() => {
+            res.status(201).json(taskData)
         })
         .catch(err => {
             res.status(500).json({message: `Error: ${err}`})

@@ -19,8 +19,8 @@ router.post('/', (req, res) => {
     const resourceData = req.body
 
     Resources.add(resourceData)
-        .then(resource => {
-            res.status(201).json(resource)
+        .then(() => {
+            res.status(201).json(resourceData)
         })
         .catch(err => {
             res.status(500).json({message: `Error: ${err}`})
