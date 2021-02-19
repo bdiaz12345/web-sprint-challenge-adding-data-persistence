@@ -7,9 +7,9 @@ module.exports = {
 }
 
 function find() {
-    return db('tasks').where('task_completed', true || false)
+    return db('tasks')
 }
 
 function add(task) {
-    return db('tasks').insert(task).where('task_completed', true || false)
+    return db('tasks').insert(task)
 }
