@@ -7,9 +7,9 @@ module.exports = {
 }
 
 function find() {
-    return db('projects')
+    return db('projects').where({ project_completed: false || true })
 }
 
 function add(project) {
-    return db('projects').insert(project)
+    return db('projects').where({ project_completed: false || true }).insert(project)
 }
